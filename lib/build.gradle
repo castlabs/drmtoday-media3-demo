@@ -1,0 +1,32 @@
+apply plugin: 'com.android.library'
+
+group 'com.castlabs.drmtoday'
+version '1.0.0'
+project.archivesBaseName = "drmtoday"
+
+def versionCode() {
+    return Integer.parseInt(project.version.replaceAll('.', ''))
+}
+
+android {
+    compileSdkVersion 34
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 34
+        versionCode versionCode()
+        versionName project.version
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+    namespace "com.castlabs.drmtoday"
+}
+
+dependencies {
+    implementation 'androidx.media3:media3-exoplayer:1.1.1'
+    implementation 'androidx.annotation:annotation:1.6.0'
+
+}
